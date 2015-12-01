@@ -1,0 +1,653 @@
+/* line 10, sitelayoutwithtransitioncode.scss */
+body {
+  font-family: "Roboto", Seref;
+  font-weight: 300;
+  color: #333;
+}
+/* line 14, sitelayoutwithtransitioncode.scss */
+body .link-primary-text-color {
+  color: #2593e2 !important;
+}
+
+/* line 18, sitelayoutwithtransitioncode.scss */
+a:link, a:visited {
+  color: #333;
+  text-decoration: none;
+}
+
+/* line 22, sitelayoutwithtransitioncode.scss */
+a:hover, a:active {
+  color: #2593e2;
+}
+
+/* line 25, sitelayoutwithtransitioncode.scss */
+h2 {
+  font-size: 40px;
+  font-weight: 300;
+}
+
+/* line 29, sitelayoutwithtransitioncode.scss */
+h4 {
+  font-size: 22px;
+}
+
+/* line 32, sitelayoutwithtransitioncode.scss */
+ul {
+  list-style-type: none;
+}
+/* line 34, sitelayoutwithtransitioncode.scss */
+ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+/* line 38, sitelayoutwithtransitioncode.scss */
+ul.vertical li {
+  display: list-item;
+}
+
+/* line 43, sitelayoutwithtransitioncode.scss */
+.all-caps {
+  text-transform: uppercase;
+}
+
+/* line 46, sitelayoutwithtransitioncode.scss */
+.smaller-text {
+  font-size: .85rem;
+}
+
+/* line 49, sitelayoutwithtransitioncode.scss */
+.shaded-text {
+  color: #999;
+}
+
+/* line 52, sitelayoutwithtransitioncode.scss */
+.background-primary-color {
+  background-color: #2593e2;
+}
+
+/* line 56, sitelayoutwithtransitioncode.scss */
+.cta {
+  color: #fff;
+  border: solid 3px #2593e2;
+  background-color: #2593e2;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+/* line 66, sitelayoutwithtransitioncode.scss */
+.cta .cta-text {
+  margin: 1px;
+  padding: 2px 10px;
+  font-size: 1rem;
+  float: left;
+}
+/* line 73, sitelayoutwithtransitioncode.scss */
+.cta:hover {
+  color: #2593e2;
+  border: solid 3px #2593e2;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* line 80, sitelayoutwithtransitioncode.scss */
+a.cta {
+  display: inline-block;
+  color: #fff;
+}
+
+/* line 85, sitelayoutwithtransitioncode.scss */
+.main-content {
+  margin: 0 auto;
+}
+/* line 88, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip {
+  background-color: #ede7e3;
+  font-size: 1.2em;
+  overflow: hidden;
+  padding: 1.3rem 4.0rem 0;
+}
+/* line 93, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .logo-container {
+  /*width: 308px;*/
+  height: 62px;
+  float: left;
+  padding: 1rem 0 0;
+  /*img {
+      height: 100%;
+      width: 100%;
+  }*/
+}
+/* line 98, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .logo-container .logo {
+  margin: .2rem 0 0;
+  font-family: "roboto slab", serif;
+  font-weight: 400;
+}
+/* line 103, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .logo-container .tagline {
+  margin: 0;
+  padding: 0;
+  color: #777;
+  font-weight: 300;
+}
+/* line 116, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container {
+  float: left;
+  overflow: hidden;
+  width: 100%;
+}
+/* line 121, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container .fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+/* line 125, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container .fixed .logo {
+  font-size: .9rem;
+}
+/* line 129, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container .contact-us-heading {
+  float: right;
+  margin: .1rem 2em;
+}
+/* line 139, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container .cta {
+  float: right;
+}
+/* line 142, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container input[type=email], .main-content .site-heading-strip .site-heading-container input[type=submit] {
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  display: none;
+}
+/* line 148, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav {
+  clear: both;
+  float: right;
+}
+/* line 153, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .top-nav {
+  margin: 0;
+  font-weight: 400;
+}
+/* line 158, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item {
+  cursor: pointer;
+  margin-left: 2em;
+  padding: 0 0 1.3rem 0;
+}
+/* line 163, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item .nav-item-link {
+  padding: 0 0 1.3rem 0;
+  text-decoration: none;
+}
+/* line 166, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item .nav-item-link .arrow {
+  border-color: #aaa;
+}
+/* line 170, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item .nav-item-link:hover .arrow {
+  border-color: inherit;
+}
+/* line 176, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel {
+  font-family: "roboto Slab", serif;
+  position: absolute;
+  z-index: 15;
+  width: 800px;
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transition: opacity 0.8s ease;
+  -moz-transition: opacity 0.8s ease;
+  transition: opacity 0.8s ease;
+  min-height: 200px;
+  background-color: white;
+  padding: 2rem;
+  box-shadow: 0.1em 0.2em 0.5em 0.2em rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  height: 475px;
+}
+/* line 193, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel p {
+  margin: 0;
+  padding: .8rem 0;
+  font-weight: 300;
+}
+/* line 198, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .panel-column-heading {
+  font-size: 1.1rem;
+  width: 32%;
+  float: left;
+}
+/* line 202, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .panel-column-heading.countries {
+  padding: 0 0 0 3.6rem;
+  width: 58%;
+}
+/* line 206, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .panel-column-heading.specialty {
+  float: left;
+  display: block;
+  width: 100%;
+}
+/* line 213, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel ul.vertical {
+  font-weight: 200;
+  font-size: 1rem;
+}
+/* line 217, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .continent-list {
+  float: left;
+  padding: 0;
+  margin: 0 2rem 0 0;
+  width: 32%;
+}
+/* line 222, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .continent-list li {
+  border-bottom: #ccc dotted 1px;
+  padding: .5rem;
+}
+/* line 227, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .country-list {
+  padding: 0 1rem 0 0;
+  width: 29%;
+  float: left;
+  opacity: 0;
+  -webkit-transition: opacity 0.8s ease;
+  -moz-transition: opacity 0.8s ease;
+  transition: opacity 0.8s ease;
+}
+/* line 236, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .country-list li {
+  padding: .1rem .1rem .1rem 1.6rem;
+}
+/* line 240, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .country-list[data-continent='asia'] {
+  opacity: 1;
+}
+/* line 244, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .specialty-list {
+  float: left;
+  max-height: 380px;
+  overflow-y: auto;
+  width: 49%;
+  padding: 0;
+  margin: 0;
+}
+/* line 251, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .specialty-list li {
+  padding: .1rem .1rem .1rem 0;
+}
+/* line 256, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .panel-cta {
+  margin-top: 1rem;
+  float: right;
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+}
+/* line 262, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .panel-cta > span {
+  text-align: right;
+  padding-right: .8rem;
+}
+/* line 268, sitelayoutwithtransitioncode.scss */
+.main-content .site-heading-strip .site-heading-container nav .nav-item #specialty.menu-panel {
+  width: 650px;
+}
+
+/* line 277, sitelayoutwithtransitioncode.scss */
+#slide-show {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* line 283, sitelayoutwithtransitioncode.scss */
+#slide-show .asset-list {
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  height: 475px;
+  width: 100%;
+}
+/* line 293, sitelayoutwithtransitioncode.scss */
+#slide-show .asset-list .asset-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 475px;
+  width: 100%;
+}
+/* line 301, sitelayoutwithtransitioncode.scss */
+#slide-show .asset-list .asset-item img {
+  height: 100%;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  /* line 293, sitelayoutwithtransitioncode.scss */
+  #slide-show .asset-list .asset-item {
+    height: auto;
+  }
+}
+/* line 311, sitelayoutwithtransitioncode.scss */
+#slide-show .asset-indicators {
+  position: absolute;
+  bottom: 50px;
+  left: calc(50% - 50px);
+  width: 100px;
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+}
+/* line 319, sitelayoutwithtransitioncode.scss */
+#slide-show .asset-indicators .template {
+  display: none;
+}
+/* line 322, sitelayoutwithtransitioncode.scss */
+#slide-show .asset-indicators li {
+  margin: 0 .2rem;
+}
+/* line 327, sitelayoutwithtransitioncode.scss */
+#slide-show .asset-overlay {
+  color: #fff;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: .8rem 5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 10;
+  margin: 0;
+}
+/* line 339, sitelayoutwithtransitioncode.scss */
+#slide-show .asset-overlay input, #slide-show .asset-overlay span {
+  float: left;
+}
+/* line 342, sitelayoutwithtransitioncode.scss */
+#slide-show .asset-overlay input {
+  margin-right: 2rem;
+  color: #676767;
+}
+/* line 346, sitelayoutwithtransitioncode.scss */
+#slide-show .asset-overlay span {
+  margin-right: .5rem;
+}
+/* line 352, sitelayoutwithtransitioncode.scss */
+#slide-show .slide-nav {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  font-size: 60px;
+  font-weight: 100;
+  height: 100%;
+  width: 60px;
+}
+/* line 360, sitelayoutwithtransitioncode.scss */
+#slide-show .slide-nav.left {
+  left: 0;
+}
+/* line 363, sitelayoutwithtransitioncode.scss */
+#slide-show .slide-nav.right {
+  right: 0;
+}
+/* line 365, sitelayoutwithtransitioncode.scss */
+#slide-show .slide-nav.right:hover {
+  cursor: pointer;
+}
+/* line 369, sitelayoutwithtransitioncode.scss */
+#slide-show .slide-nav a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+/* line 372, sitelayoutwithtransitioncode.scss */
+#slide-show .slide-nav a:hover, #slide-show .slide-nav a:active, #slide-show .slide-nav a.hovered {
+  color: white;
+}
+/* line 376, sitelayoutwithtransitioncode.scss */
+#slide-show .slide-nav span {
+  position: absolute;
+  top: calc(50% - 20px);
+}
+/* line 379, sitelayoutwithtransitioncode.scss */
+#slide-show .slide-nav span.left {
+  left: 20px;
+}
+/* line 382, sitelayoutwithtransitioncode.scss */
+#slide-show .slide-nav span.right {
+  right: 20px;
+}
+
+/* line 389, sitelayoutwithtransitioncode.scss */
+#featured {
+  padding: 0 0 3rem;
+}
+/* line 391, sitelayoutwithtransitioncode.scss */
+#featured h2 {
+  overflow: hidden;
+  text-align: center;
+}
+/* line 398, sitelayoutwithtransitioncode.scss */
+#featured .featured-tours {
+  font-family: "roboto Slab", serif;
+  overflow: hidden;
+  margin-left: 1%;
+}
+/* line 404, sitelayoutwithtransitioncode.scss */
+#featured .featured-tours article {
+  float: left;
+  width: 31%;
+  height: auto;
+  margin: 1%;
+  overflow: hidden;
+  padding: 0 0 .8rem;
+  background-color: #f7f7f7;
+}
+/* line 412, sitelayoutwithtransitioncode.scss */
+#featured .featured-tours article .tour-image-container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+/* line 416, sitelayoutwithtransitioncode.scss */
+#featured .featured-tours article .tour-image-container img {
+  height: 100%;
+  width: 100%;
+}
+/* line 421, sitelayoutwithtransitioncode.scss */
+#featured .featured-tours article .featured-tour-body {
+  padding: 0 .8rem;
+  line-height: 1.5rem;
+}
+/* line 424, sitelayoutwithtransitioncode.scss */
+#featured .featured-tours article .featured-tour-body .smaller-text {
+  margin: 0;
+  padding: 0 0 .5rem;
+  line-height: 1.1rem;
+}
+/* line 430, sitelayoutwithtransitioncode.scss */
+#featured .featured-tours article footer {
+  overflow: hidden;
+  padding: 0 .8rem;
+}
+/* line 434, sitelayoutwithtransitioncode.scss */
+#featured .featured-tours article a.cta {
+  float: right;
+}
+
+/* line 441, sitelayoutwithtransitioncode.scss */
+.arrow {
+  border-color: #aaa;
+  border-right: 3px solid;
+  border-bottom: 3px solid;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+}
+/* line 448, sitelayoutwithtransitioncode.scss */
+.arrow.down {
+  margin: 0 0 .2rem .5rem;
+  transform: rotate(45deg);
+}
+/* line 452, sitelayoutwithtransitioncode.scss */
+.arrow.up {
+  margin: .2rem 0 0 .5rem;
+  transform: rotate(-135deg);
+}
+/* line 456, sitelayoutwithtransitioncode.scss */
+.arrow.right {
+  margin: 0 0 0 .3rem;
+  transform: rotate(-45deg);
+}
+/* line 460, sitelayoutwithtransitioncode.scss */
+.arrow.left {
+  margin: 0 0 0 .3rem;
+  transform: rotate(135deg);
+}
+
+/* line 466, sitelayoutwithtransitioncode.scss */
+.circle {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: solid 2px #fff;
+  border-radius: 8px;
+  background-color: transparent;
+}
+/* line 474, sitelayoutwithtransitioncode.scss */
+.circle.is-active {
+  background-color: #fff;
+}
+
+/* line 479, sitelayoutwithtransitioncode.scss */
+#page-footer {
+  background: #333;
+  color: #eee;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* line 487, sitelayoutwithtransitioncode.scss */
+#page-footer .logo {
+  font-family: "roboto slab", serif;
+  font-weight: 400;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+/* line 493, sitelayoutwithtransitioncode.scss */
+#page-footer .tagline {
+  margin: 0;
+  padding: 0;
+  color: #aaa;
+  font-weight: 300;
+  font-size: .8rem;
+}
+/* line 501, sitelayoutwithtransitioncode.scss */
+#page-footer .social-media-icons {
+  font-size: 1.3rem;
+  margin: 1rem 0 .2rem;
+}
+/* line 504, sitelayoutwithtransitioncode.scss */
+#page-footer .social-media-icons a {
+  padding: 0 .5em;
+}
+/* line 507, sitelayoutwithtransitioncode.scss */
+#page-footer .social-media-icons a:link {
+  border: none;
+}
+/* line 512, sitelayoutwithtransitioncode.scss */
+#page-footer a:link, #page-footer a:visited {
+  color: #eee;
+}
+/* line 515, sitelayoutwithtransitioncode.scss */
+#page-footer a:hover, #page-footer a:active {
+  color: #2593e2;
+  border-bottom: dotted 1px #2593e2;
+}
+/* line 520, sitelayoutwithtransitioncode.scss */
+#page-footer .column {
+  box-sizing: border-box;
+  width: 33.3%;
+  padding: 1rem 2rem 2rem;
+  margin: 0;
+}
+/* line 525, sitelayoutwithtransitioncode.scss */
+#page-footer .column.company-info {
+  margin: .8em 0;
+  padding-top: 0;
+  border-right: dotted 1px #676767;
+}
+/* line 529, sitelayoutwithtransitioncode.scss */
+#page-footer .column.company-info h1 {
+  margin: 0;
+}
+/* line 534, sitelayoutwithtransitioncode.scss */
+#page-footer .column.blog-posts ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 537, sitelayoutwithtransitioncode.scss */
+#page-footer .column.blog-posts ul li {
+  margin: 0 0 .2rem 1rem;
+  padding-left: 0;
+  list-style-type: disc;
+  display: list-item;
+}
+/* line 546, sitelayoutwithtransitioncode.scss */
+#page-footer .column.quick-links ul {
+  width: 47%;
+  margin: 0;
+  padding: 0;
+}
+/* line 550, sitelayoutwithtransitioncode.scss */
+#page-footer .column.quick-links ul li {
+  margin: 0 0 .2rem 0;
+  padding: 0;
+  display: list-item;
+}
+/* line 555, sitelayoutwithtransitioncode.scss */
+#page-footer .column.quick-links ul.left {
+  float: left;
+}
+/* line 558, sitelayoutwithtransitioncode.scss */
+#page-footer .column.quick-links ul.right {
+  float: right;
+}
+/* line 563, sitelayoutwithtransitioncode.scss */
+#page-footer .column.left {
+  float: left;
+}
+/* line 566, sitelayoutwithtransitioncode.scss */
+#page-footer .column.right {
+  float: right;
+}
+/* line 569, sitelayoutwithtransitioncode.scss */
+#page-footer .column h4 {
+  margin-bottom: .5rem;
+  border-bottom: dashed 1px #999;
+  font-weight: 300;
+}
+/* line 575, sitelayoutwithtransitioncode.scss */
+#page-footer .row {
+  clear: both;
+  box-sizing: border-box;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+/* line 580, sitelayoutwithtransitioncode.scss */
+#page-footer .row ul {
+  padding: 0;
+  margin: 0;
+}
+/* line 583, sitelayoutwithtransitioncode.scss */
+#page-footer .row ul li {
+  display: flex;
+  justify-content: center;
+  width: auto;
+}
