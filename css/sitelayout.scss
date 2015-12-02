@@ -7,6 +7,12 @@ $c2a-primary-hover-border-color: $c2a-primary-border-color;
 $c2a-primary-hover-fill-color: $c2a-primary-text-color;
 $c2a-primary-hover-text-color: $c2a-primary-fill-color;
 
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 body {
     font-family: "Roboto", Seref;
     font-weight: 300;
@@ -151,7 +157,7 @@ a.cta {
                     //border: solid 1px orange;
                     cursor: pointer;
                     margin-left: 2em;
-                    padding: 0 0 1.3rem 0;
+                    padding: 0 .15rem 1.3rem 0;
                     .nav-item-link {
                         padding: 0 0 1.3rem 0;
                         text-decoration: none;
@@ -179,7 +185,6 @@ a.cta {
                         background-color: white;
                         padding: 2rem;
                         box-shadow: 0.1em 0.2em 0.5em 0.2em rgba(0, 0, 0, 0.4);
-                        box-sizing: border-box;
                         height: 475px;
                         p {
                             margin: 0;
@@ -269,6 +274,7 @@ a.cta {
     width: 100%;
     margin: 0;
     padding: 0;
+    position: relative;
 
     .asset-list {
         position: relative;
@@ -295,10 +301,12 @@ a.cta {
                 font-family: "roboto slab", serif;
                 position: absolute;
                 top: 60%;
-                left: 15%;
+                left: 5%;
+                width: 90%;
+                text-align: center;
                 color: white;
                 text-shadow: rgba(0,0,0,.2) 2px 2px;
-                font-size: 70px;
+                font-size: 50px;
                 font-weight: 400;
             }
         }
@@ -306,7 +314,7 @@ a.cta {
     }
     .asset-indicators {
         position: absolute;
-        top: 540px;
+        bottom: 75px;
         left: calc(50% - 50px);
         width: 100px;
         z-index: 10;
@@ -326,21 +334,38 @@ a.cta {
         background-color: rgba(0,0,0,0.7);
         padding: .8rem 5rem;
         position: absolute;
-        top: 570px ;
+        bottom: 0;
         left: 0;
-        box-sizing: border-box;
         z-index: 10;
         margin: 0;
+        
+        .destination {
+            line-height: 1rem;
+        }
+        .label {
+            margin: .3rem .4rem 0 0;
+        }
 
         input, span {
             float: left;
         }
         input {
-            margin-right: 2rem;
+            padding: .2rem .3rem;
+            margin-right: .5rem;
             color: #676767;
         }
-        span {
-            margin-right: .5rem;
+        a {
+            span {
+                margin-right: .5rem;
+                &.arrow.right {
+                    margin-top: .6rem;
+                }
+            }
+            .cta-text {
+                margin: 0 0 0 .4rem;
+                padding: 4px 1px 1px;
+            }
+
         }
     }
 
@@ -461,10 +486,10 @@ a.cta {
 //CSS Circles
 .circle {
     display: inline-block;
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     border: solid 2px #fff;
-    border-radius: 8px;
+    border-radius: 10px;
     background-color: transparent;
 
     &.is-active {
@@ -476,7 +501,6 @@ a.cta {
     background: #333;
     color: #eee;
     overflow: hidden;
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
 
@@ -514,7 +538,6 @@ a.cta {
     }
 
     .column {
-        box-sizing: border-box;
         width: 33.3%;
         padding: 1rem 2rem 2rem;
         margin: 0;
@@ -570,7 +593,6 @@ a.cta {
     }
     .row {
         clear: both;
-        box-sizing: border-box;
         color: #aaa;
         margin-bottom: 1rem;        
         ul {
