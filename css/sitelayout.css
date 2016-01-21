@@ -405,12 +405,12 @@ a.cta {
 }
 /* line 360, sitelayout.scss */
 #slide-show .asset-overlay a span.arrow.right {
-  margin-top: .6rem;
+  margin-top: .5rem;
 }
 /* line 364, sitelayout.scss */
 #slide-show .asset-overlay a .cta-text {
   margin: 0 0 0 .4rem;
-  padding: 6px 1px 1px;
+  padding: 3px 1px 0;
 }
 /* line 373, sitelayout.scss */
 #slide-show .slide-nav {

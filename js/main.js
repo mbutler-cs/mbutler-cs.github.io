@@ -55,6 +55,10 @@
                 $this.addClass('link-primary-text-color');
                 showCountryContent($this.data('continent'));
             });
+            //just want to close the panel when these are clicked
+            $('.country-link, .panel-cta ').on('click', function(e) { 
+                hideMenuPanel($(e.currentTarget).closest('.nav-item').data('dropdown-type'));
+            });
         };
 
         var slideShow = function () {
