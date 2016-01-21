@@ -446,7 +446,7 @@ a.cta {
 /* line 397, sitelayout.scss */
 #slide-show .slide-nav span {
   position: absolute;
-  top: calc(50% - 10px);
+  top: calc(40% - 10px);
 }
 /* line 400, sitelayout.scss */
 #slide-show .slide-nav span.left {

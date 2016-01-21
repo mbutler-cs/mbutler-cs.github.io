@@ -135,7 +135,7 @@
 
             var autoRotateCrossFade = setInterval(function() {
                 transitionElement('next');
-            }, 4000);
+            }, 8000);
 
             var registerEvents = function() {
                 $('.slide-nav, .asset-indicators').on('click', function (e) {
