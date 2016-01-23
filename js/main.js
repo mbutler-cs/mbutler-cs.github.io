@@ -61,66 +61,51 @@
             });
         };
 
+        //implements a cross fade slide show.
         var slideShow = function () {
-
-            //Gets the Asset we want to transition to next -- could be next
-            //previous, or direct via an index.
-            var getTransitionToAsset = function(direction, index) {
-                var $visibleAsset = $('.asset-item.is-active'),
-                    $nextAsset = $visibleAsset.next().length > 0 ? $visibleAsset.next() : $('.asset-item:first'),
-                    $prevAsset = $visibleAsset.prev().length > 0 ? $visibleAsset.prev() : $('.asset-item:last');
-                    return (typeof (index) !== 'undefined') ?
-                        $('.asset-item:eq(' + index + ')') :
-                        direction === 'next' ? $nextAsset : $prevAsset; // navigating by prev/next
-            };
-
-            //Because the implementation of this effect is images layered on top of each other, 
-            //we control which one is shown via the z-index property on the .asset-item element. 
-            //The visible asset has its z-index set to assetCount - 1, we want to set the one below
-            //the one that is currently showing which will be assetCount - 2.
-            var setTransitionToAssetZIndex = function($transitionToElement) {
-                var assetCount = $('.asset-item').length,
-                    transitionToZIndexValue = assetCount > 2 ? assetCount - 2 : 0;
-                //reset any existing elements that have our new transitionToZIndexValue already
-                $('.asset-item').each(function(i) {
-                    var $this = $(this);
-                    if ($this.css('z-index') === transitionToZIndexValue) {
-                        $this.css('z-index', transitionToZIndexValue - 1);
-                    }
-                });
-                $transitionToElement.css('z-index', transitionToZIndexValue);
-            };
-
-            var transitionElement = function (direction, index) {
-                var assetCount = $('.asset-item').length,
-                    visibleAssetIndex = $('.asset-item.is-active').index();
+            
+            var viewableWidth = $('.slide-viewer').get(0).clientWidth;
+            
+            var executeTransition = function(transitionToAssetIndex, direction, transitionDuration) {
+                var defaultTransition = '1.5s';
                 
-                if (visibleAssetIndex === -1) {
-                    visibleAssetIndex = assetCount - 1;
-                }
+                if (typeof(transitionDuration) === 'undefined') {
+                    transitionDuration = defaultTransition;
+                } 
+                
+                $('.asset-list')
+                    .css({ transition: transitionDuration, transform: 'translate3d(-' + (transitionToAssetIndex * viewableWidth) + 'px, 0, 0)'})
+                    .one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
+                        //if we've landed on a cloned asset, at the beginning or the end, we need to move to the correct asset (the one this is a clone of)
+                        if ($('.asset-item:eq('+ transitionToAssetIndex +')').hasClass('clone')) {
+                            var $assetToShow = $('.asset-item:last').index() === transitionToAssetIndex ? $('.asset-item:not(.clone):first') : $('.asset-item:not(.clone):last');
+                            executeTransition($assetToShow.index(), direction, '0s');
+                            $('.asset-item:eq(' + transitionToAssetIndex + ')').removeClass('is-active');
+                            $assetToShow.addClass('is-active');
+                        }
+                        // set the asset indicators
+                        $('.asset-indicators .circle.is-active').removeClass('is-active');
+                        $('.asset-indicators li:eq(' + ($('.asset-item.is-active').index() - 1) + ') .circle').addClass('is-active');
+                    });
+                };
 
-                direction = (typeof direction === 'undefined') ? 'next' : direction;
-
-                var $visibleAsset = $('.asset-item').eq(visibleAssetIndex),
-                    $transitionToAsset = getTransitionToAsset(direction, index),
-                    transitionToAssetIndex = $transitionToAsset.index();
-
-                setTransitionToAssetZIndex($transitionToAsset);
-
-                $visibleAsset.stop().fadeOut(function () {
-                    $(this)
-                        .css('z-index', 0)
-                        .removeClass('is-active');
-                    $('.asset-item:eq(' + transitionToAssetIndex + ')')
-                        .css('z-index', assetCount - 1)
-                        .addClass('is-active');
-
-                    //$visibleAsset's z-index has changed to be at the bottom of the z-index stack
-                    $(this).show();
-                    //reset the indicators
-                    $('.asset-indicators .circle.is-active').removeClass('is-active');
-                    $('.asset-indicators li:eq(' + ($('.asset-item.is-active').index()) + ') .circle').addClass('is-active');
-                });
+            var startTransition = function (direction, index) {
+                //console.log('direction: ' + direction + ' index:' + index);
+                var visibleAssetIndex = $('.asset-item.is-active').index(),
+                    transitionToAssetIndex = typeof (index) !== 'undefined' 
+                                             ? index + 1 
+                                             : direction === 'next' ? visibleAssetIndex + 1 : visibleAssetIndex - 1, // navigating by prev/next
+                    //if the user is navigating by index, transitionDirection allows us to transition in the proper direction.
+                    transitionDirection = typeof (index) !== 'undefined' 
+                                          ? (transitionToAssetIndex > visibleAssetIndex ? 'next' : 'prev') 
+                                          : direction;
+                                
+                $('.asset-item:eq(' + visibleAssetIndex + ')').removeClass('is-active');
+                $('.asset-item:eq(' + transitionToAssetIndex + ')').addClass('is-active');
+                
+                if (visibleAssetIndex !== transitionToAssetIndex) {
+                    executeTransition(transitionToAssetIndex, transitionDirection); //uses default transition duration    
+                }      
             };
 
             var addCircleAssetIndicators = function () {
@@ -128,7 +113,7 @@
                 var $assetIndicators = $('.asset-indicators'),
                     $circleTemplate = $assetIndicators.find('.template');
 
-                $('.asset-item').each(function () {
+                $('.asset-item:not(.clone)').each(function () {
                     var $templateClone = $circleTemplate.clone();
                     $templateClone
                         .removeClass('template')
@@ -137,53 +122,84 @@
                 $circleTemplate.remove();
             };
 
-            var autoRotateCrossFade = setInterval(function() {
-                transitionElement('next');
-            }, 8000);
-
-            var registerEvents = function() {
-                $('.slide-nav, .asset-indicators').on('click', function (e) {
-                    e.preventDefault();
-                    var direction = $(e.currentTarget).data('nav-direction'),
-                        visibleAssetIndex = $('.asset-item.is-active').index();
-
-                    if (direction) {
-                        transitionElement(direction);
-                    } else {
-                        var transitionToIndex = $(e.currentTarget).find('li').index($(e.target).parents('li'));
-                        if (visibleAssetIndex !== transitionToIndex) {
-                            transitionElement(direction, transitionToIndex);
-                        }
-                    }
-                    //clear the slide show scrolling
-                    clearInterval(autoRotateCrossFade);
-                });
-
-                $('.slide-nav').hover(function (e) {
-                    $(e.currentTarget).find('a').addClass('hovered');
-                }, function (e) {
-                    $(e.currentTarget).find('a').removeClass('hovered');
-                });
+            //The reason for cloning assets is to create the 
+            //illusion of an infinite scrolling and have the transition
+            //slide in the user's selected direction.  
+            var createClonedAssets = function () {
+                if ($('.asset-item').first().hasClass('clone')) {
+                    return;  //already been done
+                }
+                var $first = $('.asset-item:first'),
+                    $last = $('.asset-item:last');
+                    
+                $last.clone().prependTo($('.asset-list'));
+                $first.clone().appendTo($('.asset-list'));
+                    
+                $('.asset-item').first().addClass('clone');
+                $('.asset-item').last().addClass('clone');
             };
-
+            
             var init = function () {
+                
+                createClonedAssets();
+                
+                var $assetItems = $('.asset-item');
+                                 
                 addCircleAssetIndicators();
+                
+                viewableWidth = $('.slide-viewer').get(0).clientWidth;
+                
+                $('.asset-list').css({width: ($assetItems.length * viewableWidth)});
+                //set all assets sizes in pixels
+                $assetItems.each(function() {
+                    $(this).css( {width: viewableWidth});
+                });
 
-                $('.asset-item:first')
-                    .show()
-                    .css('z-index', $('.asset-item').length - 1); //for cross-fade effect
-
+                executeTransition($('.asset-item:not(.clone):first').index(), 'next', '0s');
+                
+                $('.asset-item:not(.clone):first').addClass('is-active');
+                $('.asset-indicators .circle').removeClass('is-active');
                 $('.asset-indicators .circle:first').addClass('is-active');
-
-                registerEvents();
             };
 
-            //build the asset indicators,
-            //set up the first rotation element,
-            //bind the event handlers. 
+            //build the asset indicators, and set up the first rotation element
             init();
 
-        } // end slideShow()
+            var slideShowInterval = setInterval(function () {
+               startTransition('next');
+            }, 8000);
+
+            var adjustSlideShowViewableArea = function() {
+                init();
+            }
+            
+            $('.slide-nav, .asset-indicators').on('click', function (e) {
+                e.preventDefault();
+                var direction = $(e.currentTarget).data('nav-direction'),
+                    visibleAssetIndex = $('.asset-item.is-active').index();
+
+                if (direction ) {
+                    startTransition(direction);
+                } else {
+                    var transitionToIndex = $(e.currentTarget).find('li').index($(e.target).parents('li'));
+                    if (visibleAssetIndex !== transitionToIndex + 1) { // + 1 because we've prepended a cloned element to list
+                        startTransition(direction, transitionToIndex);
+                    }
+                }
+                //clear the slide show scrolling
+                clearInterval(slideShowInterval);                
+            });
+
+            $('.slide-nav').hover(function (e) {
+                $(e.currentTarget).find('a').addClass('hovered');
+            }, function(e) {
+                $(e.currentTarget).find('a').removeClass('hovered');
+            });
+            
+            $(window).resize( function() {
+                adjustSlideShowViewableArea();
+            });
+        }; // end slideshow
 
         // public properties/methods
         return {

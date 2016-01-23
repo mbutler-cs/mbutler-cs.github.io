@@ -1,71 +1,81 @@
-/* line 10, sitelayoutwithtransitioncode.scss */
+/* line 10, sitelayoutwithcrossfadestyles.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 13, sitelayoutwithcrossfadestyles.scss */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* line 16, sitelayoutwithcrossfadestyles.scss */
 body {
   font-family: "Roboto", Seref;
   font-weight: 300;
   color: #333;
 }
-/* line 14, sitelayoutwithtransitioncode.scss */
+/* line 20, sitelayoutwithcrossfadestyles.scss */
 body .link-primary-text-color {
   color: #2593e2 !important;
 }
 
-/* line 18, sitelayoutwithtransitioncode.scss */
+/* line 24, sitelayoutwithcrossfadestyles.scss */
 a:link, a:visited {
   color: #333;
   text-decoration: none;
 }
 
-/* line 22, sitelayoutwithtransitioncode.scss */
+/* line 28, sitelayoutwithcrossfadestyles.scss */
 a:hover, a:active {
   color: #2593e2;
 }
 
-/* line 25, sitelayoutwithtransitioncode.scss */
+/* line 31, sitelayoutwithcrossfadestyles.scss */
 h2 {
   font-size: 40px;
   font-weight: 300;
 }
 
-/* line 29, sitelayoutwithtransitioncode.scss */
+/* line 35, sitelayoutwithcrossfadestyles.scss */
 h4 {
   font-size: 22px;
 }
 
-/* line 32, sitelayoutwithtransitioncode.scss */
+/* line 38, sitelayoutwithcrossfadestyles.scss */
 ul {
   list-style-type: none;
 }
-/* line 34, sitelayoutwithtransitioncode.scss */
+/* line 40, sitelayoutwithcrossfadestyles.scss */
 ul li {
   list-style-type: none;
   display: inline-block;
 }
-/* line 38, sitelayoutwithtransitioncode.scss */
+/* line 44, sitelayoutwithcrossfadestyles.scss */
 ul.vertical li {
   display: list-item;
 }
 
-/* line 43, sitelayoutwithtransitioncode.scss */
+/* line 49, sitelayoutwithcrossfadestyles.scss */
 .all-caps {
   text-transform: uppercase;
 }
 
-/* line 46, sitelayoutwithtransitioncode.scss */
+/* line 52, sitelayoutwithcrossfadestyles.scss */
 .smaller-text {
   font-size: .85rem;
 }
 
-/* line 49, sitelayoutwithtransitioncode.scss */
+/* line 55, sitelayoutwithcrossfadestyles.scss */
 .shaded-text {
   color: #999;
 }
 
-/* line 52, sitelayoutwithtransitioncode.scss */
+/* line 58, sitelayoutwithcrossfadestyles.scss */
 .background-primary-color {
   background-color: #2593e2;
 }
 
-/* line 56, sitelayoutwithtransitioncode.scss */
+/* line 62, sitelayoutwithcrossfadestyles.scss */
 .cta {
   color: #fff;
   border: solid 3px #2593e2;
@@ -75,14 +85,14 @@ ul.vertical li {
   transition: all 0.4s ease;
   overflow: hidden;
 }
-/* line 66, sitelayoutwithtransitioncode.scss */
+/* line 72, sitelayoutwithcrossfadestyles.scss */
 .cta .cta-text {
   margin: 1px;
   padding: 2px 10px;
   font-size: 1rem;
   float: left;
 }
-/* line 73, sitelayoutwithtransitioncode.scss */
+/* line 79, sitelayoutwithcrossfadestyles.scss */
 .cta:hover {
   color: #2593e2;
   border: solid 3px #2593e2;
@@ -90,109 +100,103 @@ ul.vertical li {
   cursor: pointer;
 }
 
-/* line 80, sitelayoutwithtransitioncode.scss */
+/* line 86, sitelayoutwithcrossfadestyles.scss */
 a.cta {
   display: inline-block;
   color: #fff;
 }
 
-/* line 85, sitelayoutwithtransitioncode.scss */
+/* line 91, sitelayoutwithcrossfadestyles.scss */
 .main-content {
   margin: 0 auto;
 }
-/* line 88, sitelayoutwithtransitioncode.scss */
+/* line 94, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip {
   background-color: #ede7e3;
-  font-size: 1.2em;
   overflow: hidden;
   padding: 1.3rem 4.0rem 0;
 }
-/* line 93, sitelayoutwithtransitioncode.scss */
+/* line 98, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .logo-container {
-  /*width: 308px;*/
   height: 62px;
   float: left;
   padding: 1rem 0 0;
-  /*img {
-      height: 100%;
-      width: 100%;
-  }*/
 }
-/* line 98, sitelayoutwithtransitioncode.scss */
+/* line 102, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .logo-container .logo {
   margin: .2rem 0 0;
   font-family: "roboto slab", serif;
   font-weight: 400;
 }
-/* line 103, sitelayoutwithtransitioncode.scss */
+/* line 107, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .logo-container .tagline {
   margin: 0;
   padding: 0;
   color: #777;
   font-weight: 300;
 }
-/* line 116, sitelayoutwithtransitioncode.scss */
+/* line 114, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container {
   float: left;
   overflow: hidden;
   width: 100%;
 }
-/* line 121, sitelayoutwithtransitioncode.scss */
+/* line 119, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container .fixed {
   position: fixed;
   top: 0;
   left: 0;
 }
-/* line 125, sitelayoutwithtransitioncode.scss */
+/* line 123, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container .fixed .logo {
   font-size: .9rem;
 }
-/* line 129, sitelayoutwithtransitioncode.scss */
+/* line 127, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container .contact-us-heading {
   float: right;
   margin: .1rem 2em;
 }
-/* line 139, sitelayoutwithtransitioncode.scss */
+/* line 137, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container .cta {
   float: right;
 }
-/* line 142, sitelayoutwithtransitioncode.scss */
+/* line 140, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container input[type=email], .main-content .site-heading-strip .site-heading-container input[type=submit] {
   font-size: 1rem;
   border: none;
   outline: none;
   display: none;
 }
-/* line 148, sitelayoutwithtransitioncode.scss */
+/* line 146, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav {
   clear: both;
   float: right;
 }
-/* line 153, sitelayoutwithtransitioncode.scss */
+/* line 151, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .top-nav {
   margin: 0;
   font-weight: 400;
 }
-/* line 158, sitelayoutwithtransitioncode.scss */
+/* line 156, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item {
   cursor: pointer;
   margin-left: 2em;
-  padding: 0 0 1.3rem 0;
+  padding: 0 .15rem 1.3rem 0;
 }
-/* line 163, sitelayoutwithtransitioncode.scss */
+/* line 161, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item .nav-item-link {
   padding: 0 0 1.3rem 0;
   text-decoration: none;
 }
-/* line 166, sitelayoutwithtransitioncode.scss */
+/* line 164, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item .nav-item-link .arrow {
   border-color: #aaa;
 }
-/* line 170, sitelayoutwithtransitioncode.scss */
+/* line 168, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item .nav-item-link:hover .arrow {
   border-color: inherit;
 }
-/* line 176, sitelayoutwithtransitioncode.scss */
+/* line 174, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel {
   font-family: "roboto Slab", serif;
   position: absolute;
@@ -207,50 +211,49 @@ a.cta {
   background-color: white;
   padding: 2rem;
   box-shadow: 0.1em 0.2em 0.5em 0.2em rgba(0, 0, 0, 0.4);
-  box-sizing: border-box;
   height: 475px;
 }
-/* line 193, sitelayoutwithtransitioncode.scss */
+/* line 189, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel p {
   margin: 0;
   padding: .8rem 0;
   font-weight: 300;
 }
-/* line 198, sitelayoutwithtransitioncode.scss */
+/* line 194, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .panel-column-heading {
   font-size: 1.1rem;
   width: 32%;
   float: left;
 }
-/* line 202, sitelayoutwithtransitioncode.scss */
+/* line 198, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .panel-column-heading.countries {
   padding: 0 0 0 3.6rem;
   width: 58%;
 }
-/* line 206, sitelayoutwithtransitioncode.scss */
+/* line 202, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .panel-column-heading.specialty {
   float: left;
   display: block;
   width: 100%;
 }
-/* line 213, sitelayoutwithtransitioncode.scss */
+/* line 209, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel ul.vertical {
   font-weight: 200;
   font-size: 1rem;
 }
-/* line 217, sitelayoutwithtransitioncode.scss */
+/* line 213, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .continent-list {
   float: left;
   padding: 0;
   margin: 0 2rem 0 0;
   width: 32%;
 }
-/* line 222, sitelayoutwithtransitioncode.scss */
+/* line 218, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .continent-list li {
   border-bottom: #ccc dotted 1px;
   padding: .5rem;
 }
-/* line 227, sitelayoutwithtransitioncode.scss */
+/* line 223, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .country-list {
   padding: 0 1rem 0 0;
   width: 29%;
@@ -260,15 +263,15 @@ a.cta {
   -moz-transition: opacity 0.8s ease;
   transition: opacity 0.8s ease;
 }
-/* line 236, sitelayoutwithtransitioncode.scss */
+/* line 232, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .country-list li {
   padding: .1rem .1rem .1rem 1.6rem;
 }
-/* line 240, sitelayoutwithtransitioncode.scss */
+/* line 236, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .country-list[data-continent='asia'] {
   opacity: 1;
 }
-/* line 244, sitelayoutwithtransitioncode.scss */
+/* line 240, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .specialty-list {
   float: left;
   max-height: 380px;
@@ -277,11 +280,11 @@ a.cta {
   padding: 0;
   margin: 0;
 }
-/* line 251, sitelayoutwithtransitioncode.scss */
+/* line 247, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .specialty-list li {
   padding: .1rem .1rem .1rem 0;
 }
-/* line 256, sitelayoutwithtransitioncode.scss */
+/* line 252, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .panel-cta {
   margin-top: 1rem;
   float: right;
@@ -289,23 +292,24 @@ a.cta {
   bottom: 2rem;
   right: 2rem;
 }
-/* line 262, sitelayoutwithtransitioncode.scss */
+/* line 258, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item .menu-panel .panel-cta > span {
   text-align: right;
   padding-right: .8rem;
 }
-/* line 268, sitelayoutwithtransitioncode.scss */
+/* line 264, sitelayoutwithcrossfadestyles.scss */
 .main-content .site-heading-strip .site-heading-container nav .nav-item #specialty.menu-panel {
   width: 650px;
 }
 
-/* line 277, sitelayoutwithtransitioncode.scss */
+/* line 273, sitelayoutwithcrossfadestyles.scss */
 #slide-show {
   width: 100%;
   margin: 0;
   padding: 0;
+  position: relative;
 }
-/* line 283, sitelayoutwithtransitioncode.scss */
+/* line 279, sitelayoutwithcrossfadestyles.scss */
 #slide-show .asset-list {
   position: relative;
   top: 0;
@@ -315,7 +319,7 @@ a.cta {
   height: 475px;
   width: 100%;
 }
-/* line 293, sitelayoutwithtransitioncode.scss */
+/* line 287, sitelayoutwithcrossfadestyles.scss */
 #slide-show .asset-list .asset-item {
   position: absolute;
   top: 0;
@@ -323,36 +327,49 @@ a.cta {
   height: 475px;
   width: 100%;
 }
-/* line 301, sitelayoutwithtransitioncode.scss */
+/* line 293, sitelayoutwithcrossfadestyles.scss */
 #slide-show .asset-list .asset-item img {
   height: 100%;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
-  /* line 293, sitelayoutwithtransitioncode.scss */
+  /* line 287, sitelayoutwithcrossfadestyles.scss */
   #slide-show .asset-list .asset-item {
     height: auto;
   }
 }
-/* line 311, sitelayoutwithtransitioncode.scss */
+/* line 300, sitelayoutwithcrossfadestyles.scss */
+#slide-show .asset-list .asset-item .caption {
+  font-family: "roboto slab", serif;
+  position: absolute;
+  top: 60%;
+  left: 5%;
+  width: 90%;
+  text-align: center;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.2) 2px 2px;
+  font-size: 50px;
+  font-weight: 400;
+}
+/* line 315, sitelayoutwithcrossfadestyles.scss */
 #slide-show .asset-indicators {
   position: absolute;
-  bottom: 50px;
+  bottom: 75px;
   left: calc(50% - 50px);
   width: 100px;
   z-index: 10;
   margin: 0;
   padding: 0;
 }
-/* line 319, sitelayoutwithtransitioncode.scss */
+/* line 323, sitelayoutwithcrossfadestyles.scss */
 #slide-show .asset-indicators .template {
   display: none;
 }
-/* line 322, sitelayoutwithtransitioncode.scss */
+/* line 326, sitelayoutwithcrossfadestyles.scss */
 #slide-show .asset-indicators li {
   margin: 0 .2rem;
 }
-/* line 327, sitelayoutwithtransitioncode.scss */
+/* line 331, sitelayoutwithcrossfadestyles.scss */
 #slide-show .asset-overlay {
   color: #fff;
   width: 100%;
@@ -361,24 +378,41 @@ a.cta {
   position: absolute;
   bottom: 0;
   left: 0;
-  box-sizing: border-box;
   z-index: 10;
   margin: 0;
 }
-/* line 339, sitelayoutwithtransitioncode.scss */
+/* line 342, sitelayoutwithcrossfadestyles.scss */
+#slide-show .asset-overlay .destination {
+  line-height: 1.25rem;
+}
+/* line 345, sitelayoutwithcrossfadestyles.scss */
+#slide-show .asset-overlay .label {
+  margin: .3rem .4rem 0 0;
+}
+/* line 349, sitelayoutwithcrossfadestyles.scss */
 #slide-show .asset-overlay input, #slide-show .asset-overlay span {
   float: left;
 }
-/* line 342, sitelayoutwithtransitioncode.scss */
+/* line 352, sitelayoutwithcrossfadestyles.scss */
 #slide-show .asset-overlay input {
-  margin-right: 2rem;
+  padding: .2rem .3rem;
+  margin-right: .5rem;
   color: #676767;
 }
-/* line 346, sitelayoutwithtransitioncode.scss */
-#slide-show .asset-overlay span {
+/* line 358, sitelayoutwithcrossfadestyles.scss */
+#slide-show .asset-overlay a span {
   margin-right: .5rem;
 }
-/* line 352, sitelayoutwithtransitioncode.scss */
+/* line 360, sitelayoutwithcrossfadestyles.scss */
+#slide-show .asset-overlay a span.arrow.right {
+  margin-top: .5rem;
+}
+/* line 364, sitelayoutwithcrossfadestyles.scss */
+#slide-show .asset-overlay a .cta-text {
+  margin: 0 0 0 .4rem;
+  padding: 3px 1px 0;
+}
+/* line 373, sitelayoutwithcrossfadestyles.scss */
 #slide-show .slide-nav {
   position: absolute;
   top: 0;
@@ -388,57 +422,57 @@ a.cta {
   height: 100%;
   width: 60px;
 }
-/* line 360, sitelayoutwithtransitioncode.scss */
+/* line 381, sitelayoutwithcrossfadestyles.scss */
 #slide-show .slide-nav.left {
   left: 0;
 }
-/* line 363, sitelayoutwithtransitioncode.scss */
+/* line 384, sitelayoutwithcrossfadestyles.scss */
 #slide-show .slide-nav.right {
   right: 0;
 }
-/* line 365, sitelayoutwithtransitioncode.scss */
+/* line 386, sitelayoutwithcrossfadestyles.scss */
 #slide-show .slide-nav.right:hover {
   cursor: pointer;
 }
-/* line 369, sitelayoutwithtransitioncode.scss */
+/* line 390, sitelayoutwithcrossfadestyles.scss */
 #slide-show .slide-nav a {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
 }
-/* line 372, sitelayoutwithtransitioncode.scss */
+/* line 393, sitelayoutwithcrossfadestyles.scss */
 #slide-show .slide-nav a:hover, #slide-show .slide-nav a:active, #slide-show .slide-nav a.hovered {
   color: white;
 }
-/* line 376, sitelayoutwithtransitioncode.scss */
+/* line 397, sitelayoutwithcrossfadestyles.scss */
 #slide-show .slide-nav span {
   position: absolute;
-  top: calc(50% - 20px);
+  top: calc(40% - 10px);
 }
-/* line 379, sitelayoutwithtransitioncode.scss */
+/* line 400, sitelayoutwithcrossfadestyles.scss */
 #slide-show .slide-nav span.left {
   left: 20px;
 }
-/* line 382, sitelayoutwithtransitioncode.scss */
+/* line 403, sitelayoutwithcrossfadestyles.scss */
 #slide-show .slide-nav span.right {
   right: 20px;
 }
 
-/* line 389, sitelayoutwithtransitioncode.scss */
+/* line 410, sitelayoutwithcrossfadestyles.scss */
 #featured {
   padding: 0 0 3rem;
 }
-/* line 391, sitelayoutwithtransitioncode.scss */
+/* line 412, sitelayoutwithcrossfadestyles.scss */
 #featured h2 {
   overflow: hidden;
   text-align: center;
 }
-/* line 398, sitelayoutwithtransitioncode.scss */
+/* line 419, sitelayoutwithcrossfadestyles.scss */
 #featured .featured-tours {
   font-family: "roboto Slab", serif;
   overflow: hidden;
   margin-left: 1%;
 }
-/* line 404, sitelayoutwithtransitioncode.scss */
+/* line 425, sitelayoutwithcrossfadestyles.scss */
 #featured .featured-tours article {
   float: left;
   width: 31%;
@@ -448,39 +482,39 @@ a.cta {
   padding: 0 0 .8rem;
   background-color: #f7f7f7;
 }
-/* line 412, sitelayoutwithtransitioncode.scss */
+/* line 433, sitelayoutwithcrossfadestyles.scss */
 #featured .featured-tours article .tour-image-container {
   width: 100%;
   height: auto;
   overflow: hidden;
 }
-/* line 416, sitelayoutwithtransitioncode.scss */
+/* line 437, sitelayoutwithcrossfadestyles.scss */
 #featured .featured-tours article .tour-image-container img {
   height: 100%;
   width: 100%;
 }
-/* line 421, sitelayoutwithtransitioncode.scss */
+/* line 442, sitelayoutwithcrossfadestyles.scss */
 #featured .featured-tours article .featured-tour-body {
   padding: 0 .8rem;
   line-height: 1.5rem;
 }
-/* line 424, sitelayoutwithtransitioncode.scss */
+/* line 445, sitelayoutwithcrossfadestyles.scss */
 #featured .featured-tours article .featured-tour-body .smaller-text {
   margin: 0;
   padding: 0 0 .5rem;
   line-height: 1.1rem;
 }
-/* line 430, sitelayoutwithtransitioncode.scss */
+/* line 451, sitelayoutwithcrossfadestyles.scss */
 #featured .featured-tours article footer {
   overflow: hidden;
   padding: 0 .8rem;
 }
-/* line 434, sitelayoutwithtransitioncode.scss */
+/* line 455, sitelayoutwithcrossfadestyles.scss */
 #featured .featured-tours article a.cta {
   float: right;
 }
 
-/* line 441, sitelayoutwithtransitioncode.scss */
+/* line 462, sitelayoutwithcrossfadestyles.scss */
 .arrow {
   border-color: #aaa;
   border-right: 3px solid;
@@ -489,58 +523,57 @@ a.cta {
   width: 8px;
   height: 8px;
 }
-/* line 448, sitelayoutwithtransitioncode.scss */
+/* line 469, sitelayoutwithcrossfadestyles.scss */
 .arrow.down {
   margin: 0 0 .2rem .5rem;
   transform: rotate(45deg);
 }
-/* line 452, sitelayoutwithtransitioncode.scss */
+/* line 473, sitelayoutwithcrossfadestyles.scss */
 .arrow.up {
   margin: .2rem 0 0 .5rem;
   transform: rotate(-135deg);
 }
-/* line 456, sitelayoutwithtransitioncode.scss */
+/* line 477, sitelayoutwithcrossfadestyles.scss */
 .arrow.right {
   margin: 0 0 0 .3rem;
   transform: rotate(-45deg);
 }
-/* line 460, sitelayoutwithtransitioncode.scss */
+/* line 481, sitelayoutwithcrossfadestyles.scss */
 .arrow.left {
   margin: 0 0 0 .3rem;
   transform: rotate(135deg);
 }
 
-/* line 466, sitelayoutwithtransitioncode.scss */
+/* line 487, sitelayoutwithcrossfadestyles.scss */
 .circle {
   display: inline-block;
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border: solid 2px #fff;
-  border-radius: 8px;
+  border-radius: 10px;
   background-color: transparent;
 }
-/* line 474, sitelayoutwithtransitioncode.scss */
+/* line 495, sitelayoutwithcrossfadestyles.scss */
 .circle.is-active {
   background-color: #fff;
 }
 
-/* line 479, sitelayoutwithtransitioncode.scss */
+/* line 500, sitelayoutwithcrossfadestyles.scss */
 #page-footer {
   background: #333;
   color: #eee;
   overflow: hidden;
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-/* line 487, sitelayoutwithtransitioncode.scss */
+/* line 507, sitelayoutwithcrossfadestyles.scss */
 #page-footer .logo {
   font-family: "roboto slab", serif;
   font-weight: 400;
   margin-bottom: 0;
   padding-bottom: 0;
 }
-/* line 493, sitelayoutwithtransitioncode.scss */
+/* line 513, sitelayoutwithcrossfadestyles.scss */
 #page-footer .tagline {
   margin: 0;
   padding: 0;
@@ -548,104 +581,102 @@ a.cta {
   font-weight: 300;
   font-size: .8rem;
 }
-/* line 501, sitelayoutwithtransitioncode.scss */
+/* line 521, sitelayoutwithcrossfadestyles.scss */
 #page-footer .social-media-icons {
   font-size: 1.3rem;
   margin: 1rem 0 .2rem;
 }
-/* line 504, sitelayoutwithtransitioncode.scss */
+/* line 524, sitelayoutwithcrossfadestyles.scss */
 #page-footer .social-media-icons a {
   padding: 0 .5em;
 }
-/* line 507, sitelayoutwithtransitioncode.scss */
+/* line 527, sitelayoutwithcrossfadestyles.scss */
 #page-footer .social-media-icons a:link {
   border: none;
 }
-/* line 512, sitelayoutwithtransitioncode.scss */
+/* line 532, sitelayoutwithcrossfadestyles.scss */
 #page-footer a:link, #page-footer a:visited {
   color: #eee;
 }
-/* line 515, sitelayoutwithtransitioncode.scss */
+/* line 535, sitelayoutwithcrossfadestyles.scss */
 #page-footer a:hover, #page-footer a:active {
   color: #2593e2;
   border-bottom: dotted 1px #2593e2;
 }
-/* line 520, sitelayoutwithtransitioncode.scss */
+/* line 540, sitelayoutwithcrossfadestyles.scss */
 #page-footer .column {
-  box-sizing: border-box;
   width: 33.3%;
   padding: 1rem 2rem 2rem;
   margin: 0;
 }
-/* line 525, sitelayoutwithtransitioncode.scss */
+/* line 544, sitelayoutwithcrossfadestyles.scss */
 #page-footer .column.company-info {
   margin: .8em 0;
   padding-top: 0;
   border-right: dotted 1px #676767;
 }
-/* line 529, sitelayoutwithtransitioncode.scss */
+/* line 548, sitelayoutwithcrossfadestyles.scss */
 #page-footer .column.company-info h1 {
   margin: 0;
 }
-/* line 534, sitelayoutwithtransitioncode.scss */
+/* line 553, sitelayoutwithcrossfadestyles.scss */
 #page-footer .column.blog-posts ul {
   margin: 0;
   padding: 0;
 }
-/* line 537, sitelayoutwithtransitioncode.scss */
+/* line 556, sitelayoutwithcrossfadestyles.scss */
 #page-footer .column.blog-posts ul li {
   margin: 0 0 .2rem 1rem;
   padding-left: 0;
   list-style-type: disc;
   display: list-item;
 }
-/* line 546, sitelayoutwithtransitioncode.scss */
+/* line 565, sitelayoutwithcrossfadestyles.scss */
 #page-footer .column.quick-links ul {
   width: 47%;
   margin: 0;
   padding: 0;
 }
-/* line 550, sitelayoutwithtransitioncode.scss */
+/* line 569, sitelayoutwithcrossfadestyles.scss */
 #page-footer .column.quick-links ul li {
   margin: 0 0 .2rem 0;
   padding: 0;
   display: list-item;
 }
-/* line 555, sitelayoutwithtransitioncode.scss */
+/* line 574, sitelayoutwithcrossfadestyles.scss */
 #page-footer .column.quick-links ul.left {
   float: left;
 }
-/* line 558, sitelayoutwithtransitioncode.scss */
+/* line 577, sitelayoutwithcrossfadestyles.scss */
 #page-footer .column.quick-links ul.right {
   float: right;
 }
-/* line 563, sitelayoutwithtransitioncode.scss */
+/* line 582, sitelayoutwithcrossfadestyles.scss */
 #page-footer .column.left {
   float: left;
 }
-/* line 566, sitelayoutwithtransitioncode.scss */
+/* line 585, sitelayoutwithcrossfadestyles.scss */
 #page-footer .column.right {
   float: right;
 }
-/* line 569, sitelayoutwithtransitioncode.scss */
+/* line 588, sitelayoutwithcrossfadestyles.scss */
 #page-footer .column h4 {
   margin-bottom: .5rem;
   border-bottom: dashed 1px #999;
   font-weight: 300;
 }
-/* line 575, sitelayoutwithtransitioncode.scss */
+/* line 594, sitelayoutwithcrossfadestyles.scss */
 #page-footer .row {
   clear: both;
-  box-sizing: border-box;
   color: #aaa;
   margin-bottom: 1rem;
 }
-/* line 580, sitelayoutwithtransitioncode.scss */
+/* line 598, sitelayoutwithcrossfadestyles.scss */
 #page-footer .row ul {
   padding: 0;
   margin: 0;
 }
-/* line 583, sitelayoutwithtransitioncode.scss */
+/* line 601, sitelayoutwithcrossfadestyles.scss */
 #page-footer .row ul li {
   display: flex;
   justify-content: center;

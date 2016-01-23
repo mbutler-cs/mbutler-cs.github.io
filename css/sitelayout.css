@@ -310,36 +310,40 @@ a.cta {
   position: relative;
 }
 /* line 279, sitelayout.scss */
-#slide-show .asset-list {
+#slide-show .slide-viewer {
+  width: 100%;
+  overflow: hidden;
   position: relative;
-  top: 0;
-  left: 0;
+}
+/* line 283, sitelayout.scss */
+#slide-show .slide-viewer .asset-list {
   margin: 0;
   padding: 0;
   height: 475px;
   width: 100%;
+  position: relative;
 }
-/* line 287, sitelayout.scss */
-#slide-show .asset-list .asset-item {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* line 289, sitelayout.scss */
+#slide-show .slide-viewer .asset-list .asset-item {
+  position: relative;
+  float: left;
   height: 475px;
   width: 100%;
 }
-/* line 293, sitelayout.scss */
-#slide-show .asset-list .asset-item img {
+/* line 294, sitelayout.scss */
+#slide-show .slide-viewer .asset-list .asset-item img {
+  float: left;
   height: 100%;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
-  /* line 287, sitelayout.scss */
-  #slide-show .asset-list .asset-item {
+  /* line 289, sitelayout.scss */
+  #slide-show .slide-viewer .asset-list .asset-item {
     height: auto;
   }
 }
-/* line 300, sitelayout.scss */
-#slide-show .asset-list .asset-item .caption {
+/* line 302, sitelayout.scss */
+#slide-show .slide-viewer .asset-list .asset-item .caption {
   font-family: "roboto slab", serif;
   position: absolute;
   top: 60%;
@@ -347,29 +351,28 @@ a.cta {
   width: 90%;
   text-align: center;
   color: white;
-  text-shadow: rgba(0, 0, 0, 0.2) 2px 2px;
+  text-shadow: rgba(0, 0, 0, 0.6) 1px 2px 2px;
   font-size: 50px;
   font-weight: 400;
 }
-/* line 315, sitelayout.scss */
+/* line 317, sitelayout.scss */
 #slide-show .asset-indicators {
   position: absolute;
   bottom: 75px;
   left: calc(50% - 50px);
-  width: 100px;
   z-index: 10;
   margin: 0;
   padding: 0;
 }
-/* line 323, sitelayout.scss */
+/* line 324, sitelayout.scss */
 #slide-show .asset-indicators .template {
   display: none;
 }
-/* line 326, sitelayout.scss */
+/* line 327, sitelayout.scss */
 #slide-show .asset-indicators li {
   margin: 0 .2rem;
 }
-/* line 331, sitelayout.scss */
+/* line 332, sitelayout.scss */
 #slide-show .asset-overlay {
   color: #fff;
   width: 100%;
@@ -381,38 +384,38 @@ a.cta {
   z-index: 10;
   margin: 0;
 }
-/* line 342, sitelayout.scss */
+/* line 343, sitelayout.scss */
 #slide-show .asset-overlay .destination {
   line-height: 1.25rem;
 }
-/* line 345, sitelayout.scss */
+/* line 346, sitelayout.scss */
 #slide-show .asset-overlay .label {
   margin: .3rem .4rem 0 0;
 }
-/* line 349, sitelayout.scss */
+/* line 350, sitelayout.scss */
 #slide-show .asset-overlay input, #slide-show .asset-overlay span {
   float: left;
 }
-/* line 352, sitelayout.scss */
+/* line 353, sitelayout.scss */
 #slide-show .asset-overlay input {
   padding: .2rem .3rem;
   margin-right: .5rem;
   color: #676767;
 }
-/* line 358, sitelayout.scss */
+/* line 359, sitelayout.scss */
 #slide-show .asset-overlay a span {
   margin-right: .5rem;
 }
-/* line 360, sitelayout.scss */
+/* line 361, sitelayout.scss */
 #slide-show .asset-overlay a span.arrow.right {
   margin-top: .5rem;
 }
-/* line 364, sitelayout.scss */
+/* line 365, sitelayout.scss */
 #slide-show .asset-overlay a .cta-text {
   margin: 0 0 0 .4rem;
   padding: 3px 1px 0;
 }
-/* line 373, sitelayout.scss */
+/* line 374, sitelayout.scss */
 #slide-show .slide-nav {
   position: absolute;
   top: 0;
@@ -421,58 +424,59 @@ a.cta {
   font-weight: 100;
   height: 100%;
   width: 60px;
+  text-shadow: rgba(0, 0, 0, 0.6) 1px 2px 2px;
 }
-/* line 381, sitelayout.scss */
+/* line 383, sitelayout.scss */
 #slide-show .slide-nav.left {
   left: 0;
 }
-/* line 384, sitelayout.scss */
+/* line 386, sitelayout.scss */
 #slide-show .slide-nav.right {
   right: 0;
 }
-/* line 386, sitelayout.scss */
+/* line 388, sitelayout.scss */
 #slide-show .slide-nav.right:hover {
   cursor: pointer;
 }
-/* line 390, sitelayout.scss */
+/* line 392, sitelayout.scss */
 #slide-show .slide-nav a {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
 }
-/* line 393, sitelayout.scss */
+/* line 395, sitelayout.scss */
 #slide-show .slide-nav a:hover, #slide-show .slide-nav a:active, #slide-show .slide-nav a.hovered {
   color: white;
 }
-/* line 397, sitelayout.scss */
+/* line 399, sitelayout.scss */
 #slide-show .slide-nav span {
   position: absolute;
-  top: calc(40% - 10px);
+  top: calc(40% - 20px);
 }
-/* line 400, sitelayout.scss */
+/* line 402, sitelayout.scss */
 #slide-show .slide-nav span.left {
   left: 20px;
 }
-/* line 403, sitelayout.scss */
+/* line 405, sitelayout.scss */
 #slide-show .slide-nav span.right {
   right: 20px;
 }
 
-/* line 410, sitelayout.scss */
+/* line 412, sitelayout.scss */
 #featured {
   padding: 0 0 3rem;
 }
-/* line 412, sitelayout.scss */
+/* line 414, sitelayout.scss */
 #featured h2 {
   overflow: hidden;
   text-align: center;
 }
-/* line 419, sitelayout.scss */
+/* line 421, sitelayout.scss */
 #featured .featured-tours {
   font-family: "roboto Slab", serif;
   overflow: hidden;
   margin-left: 1%;
 }
-/* line 425, sitelayout.scss */
+/* line 427, sitelayout.scss */
 #featured .featured-tours article {
   float: left;
   width: 31%;
@@ -482,39 +486,39 @@ a.cta {
   padding: 0 0 .8rem;
   background-color: #f7f7f7;
 }
-/* line 433, sitelayout.scss */
+/* line 435, sitelayout.scss */
 #featured .featured-tours article .tour-image-container {
   width: 100%;
   height: auto;
   overflow: hidden;
 }
-/* line 437, sitelayout.scss */
+/* line 439, sitelayout.scss */
 #featured .featured-tours article .tour-image-container img {
   height: 100%;
   width: 100%;
 }
-/* line 442, sitelayout.scss */
+/* line 444, sitelayout.scss */
 #featured .featured-tours article .featured-tour-body {
   padding: 0 .8rem;
   line-height: 1.5rem;
 }
-/* line 445, sitelayout.scss */
+/* line 447, sitelayout.scss */
 #featured .featured-tours article .featured-tour-body .smaller-text {
   margin: 0;
   padding: 0 0 .5rem;
   line-height: 1.1rem;
 }
-/* line 451, sitelayout.scss */
+/* line 453, sitelayout.scss */
 #featured .featured-tours article footer {
   overflow: hidden;
   padding: 0 .8rem;
 }
-/* line 455, sitelayout.scss */
+/* line 457, sitelayout.scss */
 #featured .featured-tours article a.cta {
   float: right;
 }
 
-/* line 462, sitelayout.scss */
+/* line 464, sitelayout.scss */
 .arrow {
   border-color: #aaa;
   border-right: 3px solid;
@@ -523,28 +527,28 @@ a.cta {
   width: 8px;
   height: 8px;
 }
-/* line 469, sitelayout.scss */
+/* line 471, sitelayout.scss */
 .arrow.down {
   margin: 0 0 .2rem .5rem;
   transform: rotate(45deg);
 }
-/* line 473, sitelayout.scss */
+/* line 475, sitelayout.scss */
 .arrow.up {
   margin: .2rem 0 0 .5rem;
   transform: rotate(-135deg);
 }
-/* line 477, sitelayout.scss */
+/* line 479, sitelayout.scss */
 .arrow.right {
   margin: 0 0 0 .3rem;
   transform: rotate(-45deg);
 }
-/* line 481, sitelayout.scss */
+/* line 483, sitelayout.scss */
 .arrow.left {
   margin: 0 0 0 .3rem;
   transform: rotate(135deg);
 }
 
-/* line 487, sitelayout.scss */
+/* line 489, sitelayout.scss */
 .circle {
   display: inline-block;
   width: 10px;
@@ -553,12 +557,12 @@ a.cta {
   border-radius: 10px;
   background-color: transparent;
 }
-/* line 495, sitelayout.scss */
+/* line 497, sitelayout.scss */
 .circle.is-active {
   background-color: #fff;
 }
 
-/* line 500, sitelayout.scss */
+/* line 502, sitelayout.scss */
 #page-footer {
   background: #333;
   color: #eee;
@@ -566,14 +570,14 @@ a.cta {
   margin: 0;
   padding: 0;
 }
-/* line 507, sitelayout.scss */
+/* line 509, sitelayout.scss */
 #page-footer .logo {
   font-family: "roboto slab", serif;
   font-weight: 400;
   margin-bottom: 0;
   padding-bottom: 0;
 }
-/* line 513, sitelayout.scss */
+/* line 515, sitelayout.scss */
 #page-footer .tagline {
   margin: 0;
   padding: 0;
@@ -581,102 +585,102 @@ a.cta {
   font-weight: 300;
   font-size: .8rem;
 }
-/* line 521, sitelayout.scss */
+/* line 523, sitelayout.scss */
 #page-footer .social-media-icons {
   font-size: 1.3rem;
   margin: 1rem 0 .2rem;
 }
-/* line 524, sitelayout.scss */
+/* line 526, sitelayout.scss */
 #page-footer .social-media-icons a {
   padding: 0 .5em;
 }
-/* line 527, sitelayout.scss */
+/* line 529, sitelayout.scss */
 #page-footer .social-media-icons a:link {
   border: none;
 }
-/* line 532, sitelayout.scss */
+/* line 534, sitelayout.scss */
 #page-footer a:link, #page-footer a:visited {
   color: #eee;
 }
-/* line 535, sitelayout.scss */
+/* line 537, sitelayout.scss */
 #page-footer a:hover, #page-footer a:active {
   color: #2593e2;
   border-bottom: dotted 1px #2593e2;
 }
-/* line 540, sitelayout.scss */
+/* line 542, sitelayout.scss */
 #page-footer .column {
   width: 33.3%;
   padding: 1rem 2rem 2rem;
   margin: 0;
 }
-/* line 544, sitelayout.scss */
+/* line 546, sitelayout.scss */
 #page-footer .column.company-info {
   margin: .8em 0;
   padding-top: 0;
   border-right: dotted 1px #676767;
 }
-/* line 548, sitelayout.scss */
+/* line 550, sitelayout.scss */
 #page-footer .column.company-info h1 {
   margin: 0;
 }
-/* line 553, sitelayout.scss */
+/* line 555, sitelayout.scss */
 #page-footer .column.blog-posts ul {
   margin: 0;
   padding: 0;
 }
-/* line 556, sitelayout.scss */
+/* line 558, sitelayout.scss */
 #page-footer .column.blog-posts ul li {
   margin: 0 0 .2rem 1rem;
   padding-left: 0;
   list-style-type: disc;
   display: list-item;
 }
-/* line 565, sitelayout.scss */
+/* line 567, sitelayout.scss */
 #page-footer .column.quick-links ul {
   width: 47%;
   margin: 0;
   padding: 0;
 }
-/* line 569, sitelayout.scss */
+/* line 571, sitelayout.scss */
 #page-footer .column.quick-links ul li {
   margin: 0 0 .2rem 0;
   padding: 0;
   display: list-item;
 }
-/* line 574, sitelayout.scss */
+/* line 576, sitelayout.scss */
 #page-footer .column.quick-links ul.left {
   float: left;
 }
-/* line 577, sitelayout.scss */
+/* line 579, sitelayout.scss */
 #page-footer .column.quick-links ul.right {
   float: right;
 }
-/* line 582, sitelayout.scss */
+/* line 584, sitelayout.scss */
 #page-footer .column.left {
   float: left;
 }
-/* line 585, sitelayout.scss */
+/* line 587, sitelayout.scss */
 #page-footer .column.right {
   float: right;
 }
-/* line 588, sitelayout.scss */
+/* line 590, sitelayout.scss */
 #page-footer .column h4 {
   margin-bottom: .5rem;
   border-bottom: dashed 1px #999;
   font-weight: 300;
 }
-/* line 594, sitelayout.scss */
+/* line 596, sitelayout.scss */
 #page-footer .row {
   clear: both;
   color: #aaa;
   margin-bottom: 1rem;
 }
-/* line 598, sitelayout.scss */
+/* line 600, sitelayout.scss */
 #page-footer .row ul {
   padding: 0;
   margin: 0;
 }
-/* line 601, sitelayout.scss */
+/* line 603, sitelayout.scss */
 #page-footer .row ul li {
   display: flex;
   justify-content: center;

@@ -42,7 +42,7 @@
             console.log('subscribe to the newsletter');
         };
 
-        var registerEvents = function() {
+        var registerModuleEvents = function() {
             $('.nav-item').hover(navDropdownHoverIn, navDropdownHoverOut);
             $('.cta').on('click', getNewsletterClickHandler);
             $('.continent-link').hover(function(e) {
@@ -55,32 +55,14 @@
                 $this.addClass('link-primary-text-color');
                 showCountryContent($this.data('continent'));
             });
+            //just want to close the panel when these are clicked
+            $('.country-link, .panel-cta ').on('click', function(e) { 
+                hideMenuPanel($(e.currentTarget).closest('.nav-item').data('dropdown-type'));
+            });
         };
 
+        //implements a cross fade slide show.
         var slideShow = function () {
-
-            var transition = function (direction, index) {
-                console.log('direction: ' + direction + ' index:' + index);
-                var $visibleAsset = $('.asset-item.is-active'),
-                    $nextAsset = $visibleAsset.next().length > 0 ? $visibleAsset.next() : $('.asset-item:first'),
-                    $prevAsset = $visibleAsset.prev().length > 0 ? $visibleAsset.prev() : $('.asset-item:last'),
-                    $transitionToAsset = typeof (index) !== 'undefined' ?
-                        $('.asset-item:eq(' + index + ')') :
-                        direction === 'next' ? $nextAsset : $prevAsset; // navigating by prev/next
-
-                $visibleAsset.stop(true).animate({ opacity: 0 }, 500, function () {
-                    $(this).removeClass('is-active').hide();
-                    $transitionToAsset.show().stop(true).animate({ opacity: 1 }, 500, function () {
-                        $(this).addClass('is-active');
-                    });
-                });
-                $('.asset-indicators .circle.is-active').removeClass('is-active');
-                $('.asset-indicators li:eq(' + ($('.asset-item').index('.is-active') + 1) + ') .circle').addClass('is-active');
-            };
-
-            //var slideShowInterval = setInterval(function () {
-            //    transition('next');
-            //}, 4000);
 
             //Gets the Asset we want to transition to next -- could be next
             //previous, or direct via an index.
@@ -110,7 +92,7 @@
                 $transitionToElement.css('z-index', transitionToZIndexValue);
             };
 
-            var crossFadeImage = function (direction, index) {
+            var transitionElement = function (direction, index) {
                 var assetCount = $('.asset-item').length,
                     visibleAssetIndex = $('.asset-item.is-active').index();
                 
@@ -126,7 +108,7 @@
 
                 setTransitionToAssetZIndex($transitionToAsset);
 
-                $visibleAsset.fadeOut(function () {
+                $visibleAsset.stop().fadeOut(function () {
                     $(this)
                         .css('z-index', 0)
                         .removeClass('is-active');
@@ -156,61 +138,58 @@
                 $circleTemplate.remove();
             };
 
+            var autoRotateCrossFade = setInterval(function() {
+                transitionElement('next');
+            }, 8000);
+
+            var registerEvents = function() {
+                $('.slide-nav, .asset-indicators').on('click', function (e) {
+                    e.preventDefault();
+                    var direction = $(e.currentTarget).data('nav-direction'),
+                        visibleAssetIndex = $('.asset-item.is-active').index();
+
+                    if (direction) {
+                        transitionElement(direction);
+                    } else {
+                        var transitionToIndex = $(e.currentTarget).find('li').index($(e.target).parents('li'));
+                        if (visibleAssetIndex !== transitionToIndex) {
+                            transitionElement(direction, transitionToIndex);
+                        }
+                    }
+                    //clear the slide show scrolling
+                    clearInterval(autoRotateCrossFade);
+                });
+
+                $('.slide-nav').hover(function (e) {
+                    $(e.currentTarget).find('a').addClass('hovered');
+                }, function (e) {
+                    $(e.currentTarget).find('a').removeClass('hovered');
+                });
+            };
+
             var init = function () {
                 addCircleAssetIndicators();
 
                 $('.asset-item:first')
                     .show()
-                    .animate({ opacity: 1.0 }, 500)
                     .css('z-index', $('.asset-item').length - 1); //for cross-fade effect
 
-
-                //.addClass('is-active'); //commenting for cross-fade effect
                 $('.asset-indicators .circle:first').addClass('is-active');
+
+                registerEvents();
             };
 
-            //build the asset indicators, and set up the first rotation element
+            //build the asset indicators,
+            //set up the first rotation element,
+            //bind the event handlers. 
             init();
 
-            var autoRotateCrossFade = setInterval(function() {
-                crossFadeImage('next');
-            }, 4000);
-            
-            $('.slide-nav, .asset-indicators').on('click', function (e) {
-                e.preventDefault();
-                var direction = $(e.currentTarget).data('nav-direction'),
-                    visibleAssetIndex = $('.asset-item.is-active').index();
-
-                if (direction ) {
-                    //transition(direction);
-                    //console.log('direction clicked:' + direction + ' visibleAssetIndex:' + visibleAssetIndex);
-                    crossFadeImage(direction);
-                } else {
-                    var transitionToIndex = $(e.currentTarget).find('li').index($(e.target).parents('li'));
-                    if (visibleAssetIndex !== transitionToIndex) {
-                        crossFadeImage(direction, transitionToIndex);
-                    }
-                    //e.currentTarget represents the ul container, and e.target represents the circle span
-                    //console.log($(e.currentTarget).find('li').index($(e.target).parents('li'));
-                    //transition('', $(e.currentTarget).find('li').index($(e.target).parents('li')));
-                }
-                //clear the slide show scrolling
-                //clearInterval(slideShowInterval); // commenting for cross fade                
-                clearInterval(autoRotateCrossFade);
-            });
-
-            $('.slide-nav').hover(function (e) {
-                $(e.currentTarget).find('a').addClass('hovered');
-            }, function(e) {
-                $(e.currentTarget).find('a').removeClass('hovered');
-            });
-
-        }
+        } // end slideShow()
 
         // public properties/methods
         return {
             init: function () {
-                registerEvents();
+                registerModuleEvents();
                 slideShow();
             }
         };
