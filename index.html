@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html class="no-js" lang="">
+<html class="no-js observable" lang="">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -25,6 +25,13 @@
 
         <!-- Add your site or application content here -->
         <div class="main-content">
+            <header class="sticky-header">
+                <h4>Travel Company</h4>
+                <section class="contact-us-heading">
+                    <span class="smaller-text">Talk to a tour consultant: </span>
+                    <span>(800).214.8144</span>
+                </section>
+            </header>
             <header class="site-heading-strip">
                 <section class="site-heading-container">
                     <section class="top-heading-line">
@@ -295,6 +302,7 @@
                     </nav>
                 </section>
             </header>
+            
         <section id="slide-show">
             <section class="slide-viewer">
                 <ul class="asset-list">
@@ -450,16 +458,15 @@
     <script type="text/javascript">
         app.main.init();
 
-        $(document).ready(function () {
-            //wrapping this in a setTimeout because the featured articles were unable to complete
-            //rendering before calculating heights with the longest being truncated.
-            //This is a hack that waits 200 milliseconds for the page to load before equalizing heights.
-            //This is only marginallly acceptable because the part that's recalculating is below
-            //the fold and typically would not be seen. 
-            setTimeout(function() { 
-                $('.featured-tours article').equalizeHeight();
-            }, 200);
-        });
+        //was using $(document).ready(function(){...}), but that was firing before
+        //the document content was loaded. This is checking every 100ms for document.readyState
+        //complete
+        var domLoaded = setInterval( function() {
+            if (document.readyState === 'complete') {
+                clearInterval(domLoaded);
+                $('.observable').trigger('document.ready.complete');
+            }
+        }, 100);
     </script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

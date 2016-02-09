@@ -4,7 +4,6 @@
     
     (app.main = function () {
         // private properties/methods here
-
         var showMenuPanel = function (panelType, parentOffsets) {
             var $panel = $('#' + panelType);
 
@@ -39,9 +38,13 @@
         };
 
         var getNewsletterClickHandler = function(e) {
-            console.log('subscribe to the newsletter');
+            //console.log('subscribe to the newsletter');
         };
 
+        var documentReadyComplete = function(){
+                $('.featured-tours article').equalizeHeight();                
+        };
+            
         var registerModuleEvents = function() {
             $('.nav-item').hover(navDropdownHoverIn, navDropdownHoverOut);
             $('.cta').on('click', getNewsletterClickHandler);
@@ -55,13 +58,31 @@
                 $this.addClass('link-primary-text-color');
                 showCountryContent($this.data('continent'));
             });
+            
             //just want to close the panel when these are clicked
             $('.country-link, .panel-cta ').on('click', function(e) { 
                 hideMenuPanel($(e.currentTarget).closest('.nav-item').data('dropdown-type'));
             });
+            
+            $('.observable').on('document.ready.complete', documentReadyComplete);
+            
+            // var $navbarClone = $('nav').clone();
+            // $('.sticky-header').append($navbarClone);
+           
+            $(window).on('scroll', function(e) {
+                var $header = $('.sticky-header');
+                $(e.currentTarget).scrollTop();
+                if ($(e.currentTarget).scrollTop() > 60) {
+                    $header.addClass('active');
+                    //console.log('scrolling down: ' + $(e.currentTarget).scrollTop());
+                } else {
+                    $header.removeClass('active')
+                    //console.log('scrolling up: ' + $(e.currentTarget).scrollTop());;
+                }
+            });
         };
 
-        //implements a cross fade slide show.
+        //implements a horizontal slide show.
         var slideShow = function () {
             
             var viewableWidth = $('.slide-viewer').get(0).clientWidth;
@@ -77,6 +98,8 @@
                     .css({ transition: transitionDuration, transform: 'translate3d(-' + (transitionToAssetIndex * viewableWidth) + 'px, 0, 0)'})
                     .one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(e) {
                         //if we've landed on a cloned asset, at the beginning or the end, we need to move to the correct asset (the one this is a clone of)
+                        //By sending in a zero second transition, the active image will be switched to the real image, but the user doesn't experience the 
+                        //change and the correct item will be queued up for the next transition.
                         if ($('.asset-item:eq('+ transitionToAssetIndex +')').hasClass('clone')) {
                             var $assetToShow = $('.asset-item:last').index() === transitionToAssetIndex ? $('.asset-item:not(.clone):first') : $('.asset-item:not(.clone):last');
                             executeTransition($assetToShow.index(), direction, '0s');

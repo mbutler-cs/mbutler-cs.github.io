@@ -91,6 +91,38 @@ a.cta {
 .main-content {
     margin: 0 auto;
 
+    .sticky-header {
+        background-color: #333333;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        color: #eee; 
+        overflow: hidden;
+        padding: .5rem 4.0rem;
+        margin: 0;
+        opacity: 0;
+        height: 0;
+        transition: all 400ms ease-in;
+        z-index: 20; 
+        h4 {
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+            font-family: "roboto slab", serif;
+            font-weight: 200;
+        }
+        &.active {
+            position: fixed;
+            height: 56px;
+            opacity: 1;
+        }
+    }
+    .contact-us-heading {
+        float: right;
+        margin: .1rem 2em;
+    }
+    
     .site-heading-strip {
         background-color:  #ede7e3;
         overflow: hidden;
@@ -124,16 +156,10 @@ a.cta {
                     font-size: .9rem;
                 }
             }
-            .contact-us-heading {
+            /*.contact-us-heading {
                 float: right;
                 margin: .1rem 2em;
-
-                span:first-child {
-                    span:first-child {
-
-                    }
-                }
-            }
+            }*/
             .cta {
                 float: right;
             }
@@ -175,7 +201,7 @@ a.cta {
                         font-family: "roboto Slab", serif;
                         position: absolute;
                         z-index: 15;
-                        width: 800px;
+                        width: 700px;
                         opacity: 0;
                         overflow: hidden;
                         -webkit-transition: opacity 0.8s ease;
