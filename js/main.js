@@ -88,7 +88,7 @@
             var viewableWidth = $('.slide-viewer').get(0).clientWidth;
             
             var executeTransition = function(transitionToAssetIndex, direction, transitionDuration) {
-                var defaultTransition = '1.5s';
+                var defaultTransition = '1s';
                 
                 if (typeof(transitionDuration) === 'undefined') {
                     transitionDuration = defaultTransition;
@@ -190,7 +190,7 @@
 
             var slideShowInterval = setInterval(function () {
                startTransition('next');
-            }, 8000);
+            }, 6000);
 
             var adjustSlideShowViewableArea = function() {
                 init();
